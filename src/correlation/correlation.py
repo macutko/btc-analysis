@@ -12,4 +12,4 @@ def get_heat_map(X_train, y_train, name):
     cb = plt.colorbar()
     cb.ax.tick_params(labelsize=14)
     plt.title('Correlation Matrix {}'.format(name), fontsize=16)
-    plt.show()
+    # plt.show()

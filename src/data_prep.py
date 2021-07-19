@@ -12,8 +12,13 @@ def get_clean_data():
     # remove shitty crypto
     data = data.drop(['Cardano Price', 'Bitcoin Cash Price'], axis=1)
 
-    # remove where BTC price == 0.0 and revert to follow linear time
-    data = data[data["BTC Price"] != 0.0].iloc[::-1]
+    # remove where BTC price == 0.0
+    data = data[data["BTC Price"] != 0.0]
+
+    # and revert to follow linear time
+    data = data.iloc[::-1]
+
+    data = data[:-1]
 
     # fill forwards NAN and drop last row since that is NAN
     data = data.fillna(method='ffill')
