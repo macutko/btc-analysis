@@ -4,3 +4,4 @@ Project Marking Form_Man Sci Project.pdf
 *.png
 venv/
 .idea/
+**/__pychace__/
